@@ -1,16 +1,25 @@
 class Solution:
-    numerals = {"I":1 , "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
+    def longestCommonPrefix(self, strs: list[str]) -> str :
+        prefix = ""
 
-    def romanToInteger(self, s: str) -> int :
-        n = len(s)
-        num = self.numerals[s[n-1]]  
+        if strs is None or len(strs) == 0:
+            return prefix
+
+        minLen = len(strs[0])
+        for each in strs:
+            minLen = min(minLen, len(each))
         
-        for i in range(n-2, -1, -1):
-            if self.numerals[s[i]] >= self.numerals[s[i+1]]:
-                num += self.numerals[s[i]]
-            else: 
-                num -= self.numerals[s[i]]
-        return num
+        for x in range(0, minLen):
+            currentStr = strs[0][x]
+            
+            for y in range(0, len(strs)):
+                if strs[y][x] != currentStr:
+                    return prefix
+            prefix += currentStr
+        return prefix
+        
 
-me = Solution()
-print(me.romanToInteger('MCMXCIV'))
+if __name__ == '__main__':
+    me = Solution()
+    print(me.longestCommonPrefix(["flower","flow","flight"]))
+    # print(me.longestCommonPrefix(["dog","racecar","car"]))
