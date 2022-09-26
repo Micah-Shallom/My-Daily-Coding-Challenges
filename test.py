@@ -1,25 +1,21 @@
 class Solution:
-    def longestCommonPrefix(self, strs: list[str]) -> str :
+    def longestCommonPrefix(self , strs: list[str]) -> str:
         prefix = ""
 
-        if strs is None or len(strs) == 0:
+        if strs is None and len(strs) == 0:
             return prefix
 
-        minLen = len(strs[0])
-        for each in strs:
-            minLen = min(minLen, len(each))
+        minimumLength = len(strs[0])
+        minimumLength = [len(each) for each in strs if (len(each) < minimumLength)][0]
         
-        for x in range(0, minLen):
+        for x in range(0, minimumLength):
             currentStr = strs[0][x]
-            
             for y in range(0, len(strs)):
-                if strs[y][x] != currentStr:
+                if currentStr != strs[y][x]:
                     return prefix
             prefix += currentStr
         return prefix
-        
 
 if __name__ == '__main__':
-    me = Solution()
-    print(me.longestCommonPrefix(["flower","flow","flight"]))
-    # print(me.longestCommonPrefix(["dog","racecar","car"]))
+    fire = Solution()
+    print(fire.longestCommonPrefix(["flower","flow","flight"]))
