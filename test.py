@@ -1,21 +1,25 @@
 class Solution:
-    def longestCommonPrefix(self , strs: list[str]) -> str:
-        prefix = ""
-
-        if strs is None and len(strs) == 0:
-            return prefix
-
-        minimumLength = len(strs[0])
-        minimumLength = [len(each) for each in strs if (len(each) < minimumLength)][0]
+    def isValid(self, s: str) -> bool:
+        correct = [('(','()'),('[','[]'),('{','{}')]
+        # correct = [('(','()'),('[','[]'),('{','{}'),(')','()'),(']','[]'),('}','{}')]
         
-        for x in range(0, minimumLength):
-            currentStr = strs[0][x]
-            for y in range(0, len(strs)):
-                if currentStr != strs[y][x]:
-                    return prefix
-            prefix += currentStr
-        return prefix
+        if len(s) % 2 != 0:
+            return False
+        
+        steps = len(s) // 2
+        z = 0
+        for x in range(0, steps):
+            for y in range(x+z, x+1+z):
+                for idx,each in enumerate(correct):
+                    if s[y] in correct[idx][0]:
+                        if s[y+1] in correct[idx][1]:
+                            return True
+                        else:
+                            return False
+            z += 1
+            # for y in range(0,len(s)):
+                
 
-if __name__ == '__main__':
+if __name__=='__main__':
     fire = Solution()
-    print(fire.longestCommonPrefix(["flower","flow","flight"]))
+    print(fire.isValid('()[)()'))
