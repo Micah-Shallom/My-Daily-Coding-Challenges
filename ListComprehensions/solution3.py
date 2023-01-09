@@ -17,6 +17,13 @@ dromes = ("demigod", "rewire", "madam", "freer", "anutforajaroftuna", "kiosk")
 
 print(list(filter(lambda word: word == word[::-1], dromes)))
 
+from functools import reduce
+
+numbers = [3, 4, 6, 9, 34, 12]
+
+print(reduce(lambda x , y: x + y , numbers, 0))
+
+
 # def listComp(x,y,z,n):
 #     pass
 
