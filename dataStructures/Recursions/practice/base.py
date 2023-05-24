@@ -32,7 +32,7 @@
 
 def convert_to_base(n, base):
     if n == 0:
-        return '0'
+        return '0' 
 
     if n < 0:
         return '-' + convert_to_base(abs(n), base)
