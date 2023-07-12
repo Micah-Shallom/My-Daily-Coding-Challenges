@@ -11,7 +11,6 @@ def thirdMethod():
     print("I am the third method")
 
 def fourthMethod():
-    # firstMethod()
     print("I am the fourth method")
 
 firstMethod()
@@ -36,7 +35,7 @@ def powerOfTwoIT(n):
         i += 1
     print(power)
 
-# powerOfTwoIT(5)
+powerOfTwoIT(5)
 
 def powerOfTwoRM(n):
     if n == 0:
@@ -45,4 +44,4 @@ def powerOfTwoRM(n):
         power = powerOfTwoRM(n-1)
         print(power)
         return power * 2 
-# print(powerOfTwoRM(5))
+print(powerOfTwoRM(5))
