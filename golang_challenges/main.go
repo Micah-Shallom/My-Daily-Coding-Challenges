@@ -1,9 +1,15 @@
 package main
 
 import (
-	"modules.com/micah/golang_challenges/findmax"
 	"fmt"
+	"modules.com/micah/golang_challenges/findmax"
 )
+
+func countWordfunc(){
+	
+}
+
+
 
 func findmaxfunc(){
 	p := fmt.Println
@@ -17,4 +23,5 @@ func findmaxfunc(){
 
 func main() {
 	findmaxfunc()
+	countWordfunc()
 }
