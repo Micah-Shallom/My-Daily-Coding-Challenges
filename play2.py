@@ -1,17 +1,9 @@
-# recreating the whole single linkedlist concepts
-# - instantiate the node and linkedlist(make iterable)
-# - inserting a linkedlist functionality
-# - traversing a linkedlist functionality
-# - search a linkedlist by nodevalue
-# - delete a node by location
-# - delete all nodes
-
 class Node:
     def __init__(self,value) -> None:
         self.value = value
         self.next = None
 
-class SLinkedList:
+class CircularSLinkedList:
     def __init__(self) -> None:
         self.head = None
         self.tail = None
@@ -21,105 +13,93 @@ class SLinkedList:
         while node:
             yield node
             node = node.next
+            if node == self.tail.next:
+                break
 
-    def insertSLL(self,value,location):
-        newNode = Node(value)
+    def createCSLL(self,value):
+        new_node = Node(value)
+        new_node.next = new_node
+        self.head = new_node
+        self.tail = new_node
+
+    def insertCSLL(self,value,location):
+        new_node = Node(value)
         if self.head is None:
-            self.head = newNode
-            self.tail = newNode
+            return "The CSLL does not exist"
         else:
             if location == 0:
-                newNode.next = self.head
-                self.head = newNode
+                new_node = Node(value)
+                new_node.next = self.head
+                self.head = new_node
+                self.tail.next = self.head
             elif location == 1:
-                newNode.next = None
-                self.tail.next = newNode
-                self.tail = newNode
+                new_node.next = self.head
+                self.tail.next = new_node
+                self.tail = new_node
             else:
-                node = self.head
                 index = 0
+                node = self.head
                 while index < location - 1:
                     node = node.next
                     index += 1
-                newNode.next = node.next
-                node.next = newNode
-    def traverseSLL(self,location):
-        if self.head is None:
-            print("The singly linkedlist does not exist")
-        else:
-            node = self.head
-            index = 0
-            while index < location -1 :
-                node = node.next
-                index += 1
+                new_node.next = node.next
+                node.next = new_node
+
+    def traverseCSLL(self):
+        node = self.head
+        while node:
             print(node.value)
-    def searchSLL(self,nodeValue):
+            node = node.next
+            if node == self.tail.next:
+                break
+
+    def searchCSLL(self,nodeValue):
+        node = self.head
+        while node:
+            node = node.next
+            if node.value == nodeValue:
+                return f"The node value {node.value} exists"
+            if node == self.tail.next:
+                return "The node does not exist"
+            
+    def deleteNode(self,location):
         if self.head is None:
-            print("The singly linkedlist does not exist")
-        else:
-            node = self.head
-            while node:
-                if node.value == nodeValue:
-                    break
-                node = node.next
-            print(f"The node {node.value} exists")
-    def deleteNode(self, location):
-        if self.head is None:
-            print("The singly linkedlist does not exist")
+            return "The CSLL does not exist"
         else:
             if location == 0:
                 if self.head == self.tail:
+                    self.head.next = None
                     self.head = None
                     self.tail = None
                 else:
                     self.head = self.head.next
+                    self.tail.next = self.head
             elif location == 1:
                 if self.head == self.tail:
+                    self.head.next = None
                     self.head = None
                     self.tail = None
                 else:
                     node = self.head
-                    index = 0
                     while node is not None:
-                        if node.next == self.tail:
-                            break
+                        if node == self.tail.next:
+                            break   
                         node = node.next
-                        index += 1
-                    node.next = None
+                    node.next = self.head
                     self.tail = node
-            else:
-                node = self.head
-                index = 0
-                while index < location - 1 :
-                    node = node.next
-                    index += 1
-                newNode = node.next
-                node.next = newNode.next
-
-                
-
-                
 
 
 
-                
-
-
-singlylinkedlist = SLinkedList()
-# index = [randint(0,1) for _ in range(10)]
-# value = [randint(1,30) for _ in range(10)]
-# [singlylinkedlist.insertSLL(each[0],each[1]) for each in zip(value,index)]
-
-singlylinkedlist.insertSLL(3,0)
-singlylinkedlist.insertSLL(4,0)
-singlylinkedlist.insertSLL(34,1)
-singlylinkedlist.insertSLL(34,1)
-singlylinkedlist.insertSLL(45,1)
-singlylinkedlist.insertSLL(45,3)
-singlylinkedlist.traverseSLL(3)
-singlylinkedlist.searchSLL(34)
-singlylinkedlist.deleteNode(2)
-singlylinkedlist.deleteNode(0)
-singlylinkedlist.deleteNode(1)
-print([each.value for each in singlylinkedlist])
-    
+circularSLL = CircularSLinkedList()
+circularSLL.createCSLL(1)
+circularSLL.insertCSLL(1,1)
+circularSLL.insertCSLL(2,0)
+circularSLL.insertCSLL(7,0)
+circularSLL.insertCSLL(70,2)
+circularSLL.insertCSLL(5,0)
+circularSLL.insertCSLL(4,0)
+# circularSLL.traverseCSLL()
+print(circularSLL.searchCSLL(70))
+print([each.value for each in circularSLL])
+circularSLL.deleteNode(1)
+print([each.value for each in circularSLL])
