@@ -1,105 +1,123 @@
+
+
 class Node:
     def __init__(self,value) -> None:
+        self.prev = None
         self.value = value
         self.next = None
 
-class CircularSLinkedList:
+class DoubleLinkedList:
     def __init__(self) -> None:
         self.head = None
         self.tail = None
+    
+    def check_node(self):
+        if self.head is None:
+            print("The DLL is empty")
 
     def __iter__(self):
         node = self.head
         while node:
             yield node
             node = node.next
-            if node == self.tail.next:
-                break
 
-    def createCSLL(self,value):
+    def createDLL(self,value):
         new_node = Node(value)
-        new_node.next = new_node
+        new_node.next = None
+        new_node.prev = None
         self.head = new_node
         self.tail = new_node
-
-    def insertCSLL(self,value,location):
+        
+    def insertDLL(self,value,location):
         new_node = Node(value)
-        if self.head is None:
-            return "The CSLL does not exist"
+        self.check_node()
+        if location == 0:
+            new_node.next = self.head
+            new_node.prev =  None
+            new_node.next.prev = new_node
+            self.head = new_node
+        elif location == 1:
+            new_node.next = None
+            new_node.prev = self.tail
+            self.tail.next = new_node
+            self.tail = new_node
         else:
-            if location == 0:
-                new_node = Node(value)
-                new_node.next = self.head
-                self.head = new_node
-                self.tail.next = self.head
-            elif location == 1:
-                new_node.next = self.head
-                self.tail.next = new_node
-                self.tail = new_node
-            else:
-                index = 0
-                node = self.head
-                while index < location - 1:
-                    node = node.next
-                    index += 1
-                new_node.next = node.next
-                node.next = new_node
+            index = 0
+            node = self.head
+            while index < location - 1:
+                node = node.next
+                index += 1
+            new_node.next = node.next
+            new_node.prev = node
+            node.next = new_node
+            new_node.next.prev = new_node
 
-    def traverseCSLL(self):
+    def searchDLL(self,value):
+        self.check_node()
+        node = self.head
+        while node:
+            if node.value == value:
+                return f"The node value {node.value} has been found"
+            node = node.next
+        return "The node value does not exist"
+    
+    def traverseDLL(self):
+        self.check_node()
         node = self.head
         while node:
             print(node.value)
             node = node.next
-            if node == self.tail.next:
-                break
 
-    def searchCSLL(self,nodeValue):
-        node = self.head
+    def reverseTraverseDLL(self):
+        print("---------")
+        self.check_node()
+        node = self.tail
         while node:
-            node = node.next
-            if node.value == nodeValue:
-                return f"The node value {node.value} exists"
-            if node == self.tail.next:
-                return "The node does not exist"
-            
+            print(node.value)
+            node = node.prev
+
     def deleteNode(self,location):
-        if self.head is None:
-            return "The CSLL does not exist"
+        self.check_node()
+        if location == 0:
+            if self.head == self.tail:
+                self.head = None
+                self.tail = None
+            else:
+                self.head = self.head.next
+                self.head.prev = None
+        elif location == 1:
+            if self.head == self.tail:
+                self.head = None
+                self.tail = None
+            else:
+                self.tail = self.tail.prev
+                self.tail.next = None
         else:
-            if location == 0:
-                if self.head == self.tail:
-                    self.head.next = None
-                    self.head = None
-                    self.tail = None
-                else:
-                    self.head = self.head.next
-                    self.tail.next = self.head
-            elif location == 1:
-                if self.head == self.tail:
-                    self.head.next = None
-                    self.head = None
-                    self.tail = None
-                else:
-                    node = self.head
-                    while node is not None:
-                        if node == self.tail.next:
-                            break   
-                        node = node.next
-                    node.next = self.head
-                    self.tail = node
+            index = 0
+            node = self.head
+            while index < location - 1:
+                node = node.next
+                index += 1
+            node.next = node.next.next
+            node.next.prev = node
 
 
 
-circularSLL = CircularSLinkedList()
-circularSLL.createCSLL(1)
-circularSLL.insertCSLL(1,1)
-circularSLL.insertCSLL(2,0)
-circularSLL.insertCSLL(7,0)
-circularSLL.insertCSLL(70,2)
-circularSLL.insertCSLL(5,0)
-circularSLL.insertCSLL(4,0)
-# circularSLL.traverseCSLL()
-print(circularSLL.searchCSLL(70))
-print([each.value for each in circularSLL])
-circularSLL.deleteNode(1)
-print([each.value for each in circularSLL])
+
+doubleLL = DoubleLinkedList()
+doubleLL.createDLL(5)
+doubleLL.insertDLL(2,0)
+doubleLL.insertDLL(3,1)
+doubleLL.insertDLL(3,1)
+doubleLL.insertDLL(4,2)
+doubleLL.insertDLL(7,2)
+# print(doubleLL.searchDLL(7))
+# doubleLL.traverseDLL()
+# doubleLL.reverseTraverseDLL()
+print([node.value for node in doubleLL])
+doubleLL.deleteNode(0)
+print([node.value for node in doubleLL])
+doubleLL.deleteNode(1)
+print([node.value for node in doubleLL])
+doubleLL.deleteNode(2)
+print([node.value for node in doubleLL])
