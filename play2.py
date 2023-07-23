@@ -1,123 +1,47 @@
+##The way i do it
+
+arr = [1,4,6,7,4,3,5,6,7,6,5,4,3,3,54,6,7,9,8,6,5,4,6,4,3,5,5]
 
 
+#setup the node class
 class Node:
     def __init__(self,value) -> None:
-        self.prev = None
         self.value = value
         self.next = None
 
-class DoubleLinkedList:
+class LinkedList:
     def __init__(self) -> None:
         self.head = None
         self.tail = None
-    
-    def check_node(self):
-        if self.head is None:
-            print("The DLL is empty")
 
     def __iter__(self):
         node = self.head
         while node:
-            yield node
+            yield node #using a generative function to allow iterative function calls
             node = node.next
 
-    def createDLL(self,value):
+    def insertNode(self, value):
         new_node = Node(value)
-        new_node.next = None
-        new_node.prev = None
-        self.head = new_node
-        self.tail = new_node
-        
-    def insertDLL(self,value,location):
-        new_node = Node(value)
-        self.check_node()
-        if location == 0:
-            new_node.next = self.head
-            new_node.prev =  None
-            new_node.next.prev = new_node
+        if self.head is None:
             self.head = new_node
-        elif location == 1:
-            new_node.next = None
-            new_node.prev = self.tail
-            self.tail.next = new_node
             self.tail = new_node
         else:
-            index = 0
-            node = self.head
-            while index < location - 1:
-                node = node.next
-                index += 1
-            new_node.next = node.next
-            new_node.prev = node
-            node.next = new_node
-            new_node.next.prev = new_node
+            new_node.next = None
+            self.tail.next = new_node
+            self.tail = new_node
 
-    def searchDLL(self,value):
-        self.check_node()
-        node = self.head
-        while node:
-            if node.value == value:
-                return f"The node value {node.value} has been found"
-            node = node.next
-        return "The node value does not exist"
-    
-    def traverseDLL(self):
-        self.check_node()
-        node = self.head
-        while node:
-            print(node.value)
-            node = node.next
+sLL = LinkedList()
+for idx in range(len(arr)):
+    sLL.insertNode(arr[idx])
 
-    def reverseTraverseDLL(self):
-        print("---------")
-        self.check_node()
-        node = self.tail
-        while node:
-            print(node.value)
-            node = node.prev
+print()
 
-    def deleteNode(self,location):
-        self.check_node()
-        if location == 0:
-            if self.head == self.tail:
-                self.head = None
-                self.tail = None
-            else:
-                self.head = self.head.next
-                self.head.prev = None
-        elif location == 1:
-            if self.head == self.tail:
-                self.head = None
-                self.tail = None
-            else:
-                self.tail = self.tail.prev
-                self.tail.next = None
-        else:
-            index = 0
-            node = self.head
-            while index < location - 1:
-                node = node.next
-                index += 1
-            node.next = node.next.next
-            node.next.prev = node
+print([node.value for node in sLL])
+            
 
 
 
 
-doubleLL = DoubleLinkedList()
-doubleLL.createDLL(5)
-doubleLL.insertDLL(2,0)
-doubleLL.insertDLL(3,1)
-doubleLL.insertDLL(3,1)
-doubleLL.insertDLL(4,2)
-doubleLL.insertDLL(7,2)
-# print(doubleLL.searchDLL(7))
-# doubleLL.traverseDLL()
-# doubleLL.reverseTraverseDLL()
-print([node.value for node in doubleLL])
-doubleLL.deleteNode(0)
-print([node.value for node in doubleLL])
-doubleLL.deleteNode(1)
-print([node.value for node in doubleLL])
-doubleLL.deleteNode(2)
-print([node.value for node in doubleLL])
+
+
+
