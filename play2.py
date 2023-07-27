@@ -1,11 +1,5 @@
-##The way i do it
-
-arr = [1,4,6,7,4,3,5,6,7,6,5,4,3,3,54,6,7,9,8,6,5,4,6,4,3,5,5]
-
-
-#setup the node class
 class Node:
-    def __init__(self,value) -> None:
+    def __init__(self,value):
         self.value = value
         self.next = None
 
@@ -13,35 +7,51 @@ class LinkedList:
     def __init__(self) -> None:
         self.head = None
         self.tail = None
-
+    
     def __iter__(self):
         node = self.head
         while node:
-            yield node #using a generative function to allow iterative function calls
+            yield node
             node = node.next
+        
+class Stack:
+    def __init__(self) -> None:
+        self.LinkedList = LinkedList()
 
-    def insertNode(self, value):
+    def __str__(self) -> str:
+        values = [str(node.value) for node in self.LinkedList]
+        return '\n'.join(values)
+    
+    def isEmpty(self):
+        if self.LinkedList.head is None:
+            return True
+        else: return False
+
+    def push(self,value):
         new_node = Node(value)
-        if self.head is None:
-            self.head = new_node
-            self.tail = new_node
+        if self.isEmpty():
+            self.LinkedList.head = new_node
         else:
-            new_node.next = None
-            self.tail.next = new_node
-            self.tail = new_node
+            new_node.next = self.LinkedList.head
+            self.LinkedList.head = new_node
 
-sLL = LinkedList()
-for idx in range(len(arr)):
-    sLL.insertNode(arr[idx])
+    def pop(self):
+        if self.isEmpty():
+            return "There is nothing to pop out"
+        else:
+            self.LinkedList.head = self.LinkedList.head.next
+    
+    def peek(self):
+        if self.isEmpty():
+            return "The Stack is empty"
+        else:
+            return self.LinkedList.head.value
+        
 
-print()
-
-print([node.value for node in sLL])
-            
-
-
-
-
-
-
-
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.push(4)
+print(stack)
+print(stack.peek())

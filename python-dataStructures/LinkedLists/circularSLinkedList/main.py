@@ -66,17 +66,17 @@ class CircularSLinkedList:
                     break
                 node = node.next
 
-    def deleteNode(self,location):
-        if self.head is None:
-            return "The CSLL does not exist"
-        else:
-            if location == 0:
-                if self.head == self.tail:
-                    self.head = None
-                    self.tail = None
-                else:
-                    self.head = self.head.next
-                    self.tail.next = self.head
+    # def deleteNode(self,location):
+    #     if self.head is None:
+    #         return "The CSLL does not exist"
+    #     else:
+    #         if location == 0:
+    #             if self.head == self.tail:
+    #                 self.head = None
+    #                 self.tail = None
+    #             else:
+    #                 self.head = self.head.next
+    #                 self.tail.next = self.head
 
 circularSLL = CircularSLinkedList()
 circularSLL.createCSLL(5)
