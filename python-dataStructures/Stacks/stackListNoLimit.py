@@ -15,7 +15,7 @@ class Stack:
         if self.list == []:
             return True
         return False
-    
+     
     #push
     def push(self,value):
         self.list.append(value)

@@ -29,9 +29,9 @@ class Stack:
     def __init__(self) -> None:
         self.LinkedList = LinkedList()
 
-    def __str__(self) -> str:
+    def __str__(self):
         values = [str(node.value) for node in self.LinkedList]
-        return "\n".join(values)
+        return " -> ".join(values)
     
     def isEmpty(self):
         if self.LinkedList.head is None:

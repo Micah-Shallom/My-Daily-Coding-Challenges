@@ -1,9 +1,9 @@
 class Node:
-    def __init__(self,value):
+    def __init__(self,value) -> None:
         self.value = value
         self.next = None
 
-class LinkedList:
+class SLinkedList:
     def __init__(self) -> None:
         self.head = None
         self.tail = None
@@ -14,44 +14,55 @@ class LinkedList:
             yield node
             node = node.next
         
-class Stack:
-    def __init__(self) -> None:
-        self.LinkedList = LinkedList()
-
-    def __str__(self) -> str:
-        values = [str(node.value) for node in self.LinkedList]
-        return '\n'.join(values)
-    
-    def isEmpty(self):
-        if self.LinkedList.head is None:
-            return True
-        else: return False
-
-    def push(self,value):
+    def insertSLL(self,value,location):
         new_node = Node(value)
-        if self.isEmpty():
-            self.LinkedList.head = new_node
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
         else:
-            new_node.next = self.LinkedList.head
-            self.LinkedList.head = new_node
+            if location == 0:
+                new_node.next = self.head
+                self.head = new_node
+            elif location == 1:
+                new_node.next = None
+                self.tail.next = new_node
+                self.tail = new_node
+            else:
+                index = 0
+                node = self.head
+                while index < location - 1:
+                    node = node.next
+                    index += 1
+                new_node.next = node.next
+                node.next = new_node
+    def traverseSLL (self):
+        node = self.head
+        while node :
+            print(node.value)
+            node = node.next
 
-    def pop(self):
-        if self.isEmpty():
-            return "There is nothing to pop out"
-        else:
-            self.LinkedList.head = self.LinkedList.head.next
-    
-    def peek(self):
-        if self.isEmpty():
-            return "The Stack is empty"
-        else:
-            return self.LinkedList.head.value
-        
+    def searchSLL(self,nodevalue):
+        node=self.head
+        while node:
+            if nodevalue==node.value:
+                print("value has been found")
+                break
+            node=node.next
 
-stack = Stack()
-stack.push(1)
-stack.push(2)
-stack.push(3)
-stack.push(4)
-print(stack)
-print(stack.peek())
+    def deleteNode
+
+
+
+
+
+sLL = SLinkedList()
+sLL.insertSLL(1,0)
+sLL.insertSLL(1,0)
+sLL.insertSLL(5,1)
+sLL.insertSLL(3,0)
+sLL.insertSLL(10,2)
+sLL.insertSLL(1,1)
+sLL.traverseSLL()     
+sLL.searchSLL(1)
+for node in sLL:
+    print(node.value)         

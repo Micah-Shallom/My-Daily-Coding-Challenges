@@ -99,9 +99,9 @@ sLL.insertSLL(5,1)
 sLL.insertSLL(3,0)
 sLL.insertSLL(10,2)
 sLL.insertSLL(1,1)
-sLL.traverseSLL(2)
-sLL.searchSLL(5)
-sLL.deleteNode(1)
+# sLL.traverseSLL(2)
+# sLL.searchSLL(5)
+# sLL.deleteNode(1)
 
 print([each.value for each in sLL])
                 

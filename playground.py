@@ -1,62 +1,49 @@
-#circular singly linkedlist
-
-
-class Node:
-    def __init__(self,value) -> None:
+class ListNode:
+    def __init__(self,value=0) -> None:
         self.value = value
         self.next = None
 
-class CircularSLinkedList:
-    def __init__(self):
-        self.head = None
-        self.tail = None
+arr = [1,2,3,4,5]
 
-    def __iter__(self):
-        node = self.head
-        while node:
-            yield node
-            if node.next == self.tail.next:
-                break
-            node = node.next
+h = ListNode(arr[0])
+v = h
 
-    def createCSLL(self,value):
-        new_node = Node(value)
-        new_node.next = new_node
-        self.head = new_node
-        self.tail = new_node
+for node in arr[1:]:
+    v.next = ListNode(node)
+    v = v.next
 
-    def insertNode(self,value,location):
-        new_node =  Node(value)
-        if self.head is None:
-            return "The CSLL does not exist"
-        else:
-            if location == 0:
-                new_node.next = self.head
-                self.head = new_node
-                self.tail.next = new_node
-            elif location == 1:
-                new_node.next = self.tail.next
-                self.tail.next = new_node
-                self.tail = new_node
-            else:
-                index = 0
-                node = self.head
-                while index < location - 1:
-                    node = node.next
-                    index += 1
-                new_node.next = node.next
-                node.next = new_node
-        
+
+class Solution:
+    def reverseLL(self,head):
+        prev = None
+        curr = head
+        next = None
+
+        while (curr):
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+        return prev
     
-circularSLL = CircularSLinkedList()
-circularSLL.createCSLL(2)
-circularSLL.insertNode(1,0)
-circularSLL.insertNode(1,0)
-circularSLL.insertNode(2,1)
-circularSLL.insertNode(4,1)
-circularSLL.insertNode(7,0)
-circularSLL.insertNode(7,0)
-circularSLL.insertNode(5,2)
+    def recurseReverseLL(self,head,prev=None,next=None):
+        curr = head
+        if curr == None:
+            return prev
+        next = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next
+        print(prev.value)
+        return self.recurseReverseLL(curr, prev , next)
 
-print([node.value for node in circularSLL])
+def printl(head):
+    pointer = head
+    while pointer:
+        print(pointer.value , end=", ")
+        pointer = pointer.next
+
+inst = Solution()
+printl(inst.recurseReverseLL(h))
+
 
