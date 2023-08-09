@@ -56,3 +56,12 @@ class Bank:
             self.__balance -= amount
 
 gtbank = Bank(230, 10000000000000)
+
+
+
+class MyClass:
+    def __init__(self, *args) -> None:
+        self.arguments = args
+
+myclass = MyClass("Shallom","Micah", "Bawa")
+print(myclass.arguments)
