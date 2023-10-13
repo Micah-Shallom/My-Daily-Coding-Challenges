@@ -49,19 +49,3 @@ class Queue:
             else: 
                 self.LinkedList.head = self.LinkedList.head.next
             return node
-        
-    def peek(self):
-        if self.isEmpty():
-            print("The Queue is empty")
-        else:
-            return self.LinkedList.head
-
-queue = Queue()
-queue.enqueue(1)
-queue.enqueue(2)
-queue.enqueue(3)
-queue.enqueue(4)
-print(queue)
-queue.dequeue()
-print(queue)
-    
