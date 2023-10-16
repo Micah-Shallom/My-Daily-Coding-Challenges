@@ -1,39 +1,48 @@
-# Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-# You may assume that each input would have exactly one solution, and you may not use the same element twice.
-# You can return the answer in any order.
-# Example 1:
+class Node:
+    def __init__(self, value) -> None:
+        self.value = value
+        self.next = None
 
-# Input: nums = [2,7,11,15], target = 9
-# Output: [0,1]
-# Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+class LinkedList:
+    def __init__(self) -> None:
+        self.head = None
 
+    def __iter__(self):
+        node = self.head
+        while node:
+            yield node
+            node = node.next
 
+class Stack:
+    def __init__(self) -> None:
+        self.LinkedList = LinkedList()
 
+    def __str__(self) -> str:
+        values = [str(node.value) for node in self.LinkedList]
+        return "\n".join(values)
 
-def solution(arr, target):
-    hashmap = {}
-    for idx, val in enumerate(arr):
-        diff = target - val
-        if diff in hashmap: 
-            return hashmap[val], idx
-        hashmap[val] = idx
+    def isEmpty(self):
+        if self.LinkedList.head is None:
+            return True
 
-print(solution([3,3,2, 4], 6))
+    def push(self, value):
+        new_node = Node(value)
+        if self.LinkedList.head is None:
+            self.LinkedList.head = new_node
+        else:
+            new_node.next = self.LinkedList.head
+            self.LinkedList.head = new_node
+    
+    def pop(self):
+        if self.isEmpty():
+            return "The stack is Empty"
+        else:
+            self.LinkedList.head = self.LinkedList.head.next
 
-        
-
-# Example 2:
-
-# Input: nums = [3,2,4], target = 6
-# Output: [1,2]
-# Example 3:
-
-# Input: nums = [3,3], target = 6
-# Output: [0,1]
- 
-
-# Constraints:
-
-# 2 <= nums.length <= 104
-# -109 <= nums[i] <= 109
-# -109 <= target <= 109
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.push(4)
+stack.pop()
+print(stack)

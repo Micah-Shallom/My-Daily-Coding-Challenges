@@ -16,7 +16,7 @@
 # 1 <= nums.length <= 105
 # -109 <= nums[i] <= 109
 
-def duplicate(nums: list[int]) -> bool:
+def duplicate(nums: list[int]) -> bool: #using a hashset
     seen = set()
     for num in nums:
         if num in seen:
