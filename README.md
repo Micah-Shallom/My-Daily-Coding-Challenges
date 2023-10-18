@@ -4,12 +4,13 @@ Welcome to my daily coding challenges repository! In this space, I tackle coding
 
 ## Table of Contents
 
-- [About](#about)
-- [Daily Challenge Archive](#daily-challenge-archive)
-- [Languages](#languages)
-- [Learning Documentation](#learning-documentation)
-- [Contributing](#contributing)
-- [Connect with Me](#connect-with-me)
+- [My Daily Coding Challenges](#my-daily-coding-challenges)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [Daily Challenge Archive](#daily-challenge-archive)
+  - [Languages](#languages)
+  - [Contributing](#contributing)
+  - [Connect with Me](#connect-with-me)
 
 ## About
 
@@ -21,14 +22,11 @@ Explore my daily coding challenges in the [Daily Challenge Archive](./challenges
 
 ## Languages
 
-- **Python**: [Python Directory](./python)
-- **Golang**: [Golang Directory](./golang)
+- **Python**: [Python Directory](./python_challenges/)
+- **Golang**: [Golang Directory](./golang_challenges/)
 
 Feel free to dive into the code and explore how I approach problem-solving in these two languages.
 
-## Learning Documentation
-
-Alongside coding challenges, I document my learning journey in data structures and algorithms. Check out the [Learning Documentation](./docs) directory for detailed explanations, notes, and insights gained during my exploration of these fundamental concepts.
 
 ## Contributing
 
@@ -38,9 +36,9 @@ If you're passionate about coding challenges, data structures, and algorithms, f
 
 Let's connect! Feel free to reach out if you have questions, suggestions, or just want to chat about coding.
 
-- **LinkedIn**: [Your LinkedIn Profile](#)
-- **Twitter**: [Your Twitter Handle](#)
-- **Email**: [Your Email](#)
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/micah-shallom/)
+- **Twitter**: [Your Twitter Handle](https://twitter.com/Micah_Shallom)
+- **Email**: [email address](micahshallom@gmail.com)
 
 Happy coding!
 

@@ -3,14 +3,18 @@ package challenges
 import "fmt"
 
 func rdSolution(arr []int) int {
-	j := 1 
-	for i := 1; i < len(arr); i++ {
-		if arr[i] != arr[i-1]{
+	n := len(arr)
+	if n == 0 {
+		return 0
+	}
+	j := 0
+	for i := 1; i < n; i++ {
+		if arr[i] != arr[j] {
+			j++
 			arr[j] = arr[i]
-			j += 1
 		}
 	}
-	return j
+	return j + 1
 }
 
 func RemoveDuplicates() {
