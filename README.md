@@ -42,6 +42,4 @@ Let's connect! Feel free to reach out if you have questions, suggestions, or jus
 
 Happy coding!
 
----
 
-Feel free to customize the placeholders like "Your LinkedIn Profile," "Your Twitter Handle," and "Your Email" with your actual information. Also, create the corresponding directories and files for the challenges, Python solutions, Golang solutions, and learning documentation.
