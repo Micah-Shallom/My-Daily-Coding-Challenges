@@ -6,5 +6,8 @@ func main() {
 	// c.Twosums()
 	// c.MaxProfit()
 	// c.Duplicate()
-	c.RemoveDuplicates()
+	// c.RemoveDuplicates()
+	// c.ManipulatingJSON()
+	// c.VaSolution()
+	c.ArrayConcate()
 }
