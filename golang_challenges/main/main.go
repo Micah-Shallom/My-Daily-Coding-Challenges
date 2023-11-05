@@ -9,5 +9,6 @@ func main() {
 	// c.RemoveDuplicates()
 	// c.ManipulatingJSON()
 	// c.VaSolution()
-	c.ArrayConcate()
+	// c.ArrayConcate()
+	c.ReplaceGreatest()
 }
