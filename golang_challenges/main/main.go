@@ -10,5 +10,6 @@ func main() {
 	// c.ManipulatingJSON()
 	// c.VaSolution()
 	// c.ArrayConcate()
-	c.ReplaceGreatest()
+	// c.ReplaceGreatest()
+	c.IsSequence()
 }
