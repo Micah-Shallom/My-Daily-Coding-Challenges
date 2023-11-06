@@ -4,3 +4,5 @@ repl*
 .cache
 .upm
 venv
+playground.py
+play2.py
