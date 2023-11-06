@@ -36,9 +36,8 @@ If you're passionate about coding challenges, data structures, and algorithms, f
 
 Let's connect! Feel free to reach out if you have questions, suggestions, or just want to chat about coding.
 
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/micah-shallom/)
-- **Twitter**: [Your Twitter Handle](https://twitter.com/Micah_Shallom)
-- **Email**: [email address](micahshallom@gmail.com)
+- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/micah-shallom/)
+- **Twitter**: [Twitter Handle](https://twitter.com/Micah_Shallom)
 
 Happy coding!
 
