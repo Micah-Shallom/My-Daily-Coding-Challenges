@@ -12,5 +12,6 @@ func main() {
 	// c.ArrayConcate()
 	// c.ReplaceGreatest()
 	// c.IsSequence()
-	c.LengthLastWord()
+	// c.LengthLastWord()
+	c.LCP()
 }
