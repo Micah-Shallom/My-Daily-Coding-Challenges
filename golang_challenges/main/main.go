@@ -13,5 +13,6 @@ func main() {
 	// c.ReplaceGreatest()
 	// c.IsSequence()
 	// c.LengthLastWord()
-	c.LCP()
+	// c.LCP()
+	c.UniqueEmails()
 }
