@@ -14,5 +14,6 @@ func main() {
 	// c.IsSequence()
 	// c.LengthLastWord()
 	// c.LCP()
-	c.UniqueEmails()
+	// c.UniqueEmails()
+	c.IsIsomorphic()
 }
