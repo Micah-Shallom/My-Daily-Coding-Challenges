@@ -15,5 +15,6 @@ func main() {
 	// c.LengthLastWord()
 	// c.LCP()
 	// c.UniqueEmails()
-	c.IsIsomorphic()
+	// c.IsIsomorphic()
+	c.MajorityElements()
 }
