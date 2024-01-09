@@ -16,5 +16,6 @@ func main() {
 	// c.LCP()
 	// c.UniqueEmails()
 	// c.IsIsomorphic()
-	c.MajorityElements()
+	// c.MajorityElements()
+	c.NextGreaterElement()
 }
