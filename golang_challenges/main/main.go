@@ -17,5 +17,6 @@ func main() {
 	// c.UniqueEmails()
 	// c.IsIsomorphic()
 	// c.MajorityElements()
-	c.NextGreaterElement()
+	// c.NextGreaterElement()
+	c.FindPivotIndex()
 }
