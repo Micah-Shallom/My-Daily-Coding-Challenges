@@ -18,5 +18,8 @@ func main() {
 	// c.IsIsomorphic()
 	// c.MajorityElements()
 	// c.NextGreaterElement()
-	c.FindPivotIndex()
+	// c.FindPivotIndex()
+	// c.RangeSumQuery()
+	// c.FindDisappearedNums()
+	c.WordPattern()
 }
