@@ -21,5 +21,7 @@ func main() {
 	// c.FindPivotIndex()
 	// c.RangeSumQuery()
 	// c.FindDisappearedNums()
-	c.WordPattern()
+	// c.WordPattern()
+	// c.MyHashSet()
+	c.DesignHashSet()
 }
