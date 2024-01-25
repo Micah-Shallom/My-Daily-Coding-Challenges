@@ -23,5 +23,6 @@ func main() {
 	// c.FindDisappearedNums()
 	// c.WordPattern()
 	// c.MyHashSet()
-	c.DesignHashSet()
+	// c.DesignHashSet()
+	c.DesignHashMap()
 }
