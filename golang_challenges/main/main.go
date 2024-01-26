@@ -24,5 +24,6 @@ func main() {
 	// c.WordPattern()
 	// c.MyHashSet()
 	// c.DesignHashSet()
-	c.DesignHashMap()
+	// c.DesignHashMap()
+	c.ValidPalindrome()
 }
