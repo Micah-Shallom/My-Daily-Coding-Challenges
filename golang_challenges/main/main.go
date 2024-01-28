@@ -25,5 +25,6 @@ func main() {
 	// c.MyHashSet()
 	// c.DesignHashSet()
 	// c.DesignHashMap()
-	c.ValidPalindrome()
+	// c.ValidPalindrome()
+	c.ValidParenthesis()
 }
