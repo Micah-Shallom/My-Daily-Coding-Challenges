@@ -28,8 +28,8 @@ func vpthSolution(s string) bool{
 	mapping := map[string]string{")": "(", "]": "[", "}": "{"}
 
 	for _, char := range s{
-		if mapping[string(char)] != ""{
-			if len(stack) == 0 || stack[len(stack)-1] != mapping[string(char)]{
+		if val, ok := mapping[string(char)]; ok{
+			if len(stack) == 0 || stack[len(stack)-1] != mapping[val]{
 				return false
 			}
 			stack = stack[:len(stack)-1]

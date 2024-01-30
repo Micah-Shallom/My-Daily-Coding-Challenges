@@ -36,26 +36,25 @@ class Solution:
                 if not stack or mapping2[stack.pop()] != char:
                     return False  # Unmatched closing bracket
 
-    # After iterating through the string, stack should be empty if all brackets are matched
+        # After iterating through the string, stack should be empty if all brackets are matched
         return len(stack) == 0
                 
 
 
 
     def isValid(self, s:str) -> bool:
-        closed = False
-        hashMap = dict()
+        mapping = {')': '(', ']': '[', '}': '{'}
+        stack = []
 
-        for idx in range(len(s)-1):
-            for idy in range(len(self.pList)-1):
-                if s[idx] == self.pList[idy]:
-                    hashMap[s[idx]] = closed
-                    if self.pList[idy+1] in s:
-                        hashMap[s[idx]] = True
-
-        return hashMap
+        for char in s:
+            if char in mapping:
+                if not stack or mapping[char] != stack.pop():
+                    return False
+            else:
+                stack.append(char)
+        return len(stack) == 0
 
 
 solution = Solution()
 s = "{[]}"
-print(solution.isValid1(s))
+print(solution.isValid(s))
