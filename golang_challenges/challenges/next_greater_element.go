@@ -13,7 +13,7 @@ func ngeSolution(nums1, nums2 []int) []int {
 			}
 		}
 
-		if idx != -1 {
+		if idx != -1 { 
 			found := false
 			for k:=idx; k < len(nums2); k++ {
 				if nums2[k] > nums2[idx]{

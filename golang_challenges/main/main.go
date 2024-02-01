@@ -27,5 +27,7 @@ func main() {
 	// c.DesignHashMap()
 	// c.ValidPalindrome()
 	// c.ValidParenthesis()
-	c.MinimumDifference()
+	// c.MinimumDifference()
+	// c.BaseBallGame()
+	c.DailyTemperatures()
 }
