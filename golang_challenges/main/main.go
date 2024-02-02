@@ -29,5 +29,6 @@ func main() {
 	// c.ValidParenthesis()
 	// c.MinimumDifference()
 	// c.BaseBallGame()
-	c.DailyTemperatures()
+	// c.DailyTemperatures()
+	c.DivideArray()
 }
