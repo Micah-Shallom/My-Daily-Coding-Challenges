@@ -30,5 +30,6 @@ func main() {
 	// c.MinimumDifference()
 	// c.BaseBallGame()
 	// c.DailyTemperatures()
-	c.DivideArray()
+	// c.DivideArray()
+	c.FirstUnique()
 }

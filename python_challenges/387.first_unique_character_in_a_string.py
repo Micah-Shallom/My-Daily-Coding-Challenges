@@ -28,8 +28,21 @@ class Solution:
             if hashmap[i] == 1:
                 return s.index(i)
         return -1
+    
+    def firstUniqChar1(self, s: str) -> int:
+        from collections import defaultdict
+        count = defaultdict(int)
+
+        for c in s:
+            count[c] += 1
+
+        for i, c in enumerate(s):
+            if count[c] == 1:
+                return i
+        return -1
+
 
 
 solution = Solution()
 s = "leetcode"
-print(solution.firstUniqChar(s))
+print(solution.firstUniqChar1(s))
