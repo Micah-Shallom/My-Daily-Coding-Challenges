@@ -34,9 +34,26 @@ class Solution:
         for each in hashmap:
             res += each * hashmap[each]
         return res
+    
+    def frequencySort1(self, s: str) -> str:
+        from collections import defaultdict
 
+        count =  defaultdict(int)
+        bucket = defaultdict(list)
 
+        for c in s:
+            count[c] += 1
+        
+        for char, cnt in count.items():
+            bucket[cnt].append(char)
+
+        res = []
+        for i in range(len(s), 0, -1):
+            for c in bucket[i]:
+                res.append(c * i)
+
+        return "".join(res)
 
 solution = Solution()
 s = "Aabb"
-print(solution.frequencySort(s))
+print(solution.frequencySort1(s))
