@@ -31,5 +31,6 @@ func main() {
 	// c.BaseBallGame()
 	// c.DailyTemperatures()
 	// c.DivideArray()
-	c.FirstUnique()
+	// c.FirstUnique()
+	c.FrequencySort()
 }
