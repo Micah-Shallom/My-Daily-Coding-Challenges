@@ -32,5 +32,6 @@ func main() {
 	// c.DailyTemperatures()
 	// c.DivideArray()
 	// c.FirstUnique()
-	c.FrequencySort()
+	// c.FrequencySort()
+	c.NumSubArray()
 }
