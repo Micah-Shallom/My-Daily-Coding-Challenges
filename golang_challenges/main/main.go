@@ -33,5 +33,7 @@ func main() {
 	// c.DivideArray()
 	// c.FirstUnique()
 	// c.FrequencySort()
-	c.NumSubArray()
+	// c.NumSubArray()
+	c.FirstPalindrome()
+
 }
