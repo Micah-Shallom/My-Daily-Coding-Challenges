@@ -34,6 +34,7 @@ func main() {
 	// c.FirstUnique()
 	// c.FrequencySort()
 	// c.NumSubArray()
-	c.FirstPalindrome()
+	// c.FirstPalindrome()
+	c.MergeAlternately()
 
 }
