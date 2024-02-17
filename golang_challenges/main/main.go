@@ -35,6 +35,7 @@ func main() {
 	// c.FrequencySort()
 	// c.NumSubArray()
 	// c.FirstPalindrome()
-	c.MergeAlternately()
+	// c.MergeAlternately()
+	c.LengthOfLongestSubString()
 
 }
