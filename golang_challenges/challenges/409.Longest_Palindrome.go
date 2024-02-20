@@ -5,6 +5,7 @@ package challenges
 func longestPalindrome(s string) int {
 	charCount := make(map[rune]int)
 
+	//create a hasmap of characters and their counts
 	for _, char := range s {
 		charCount[char]++
 	}
