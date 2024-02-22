@@ -37,5 +37,6 @@ func main() {
 	// c.FirstPalindrome()
 	// c.MergeAlternately()
 	// c.LengthOfLongestSubString()
-	c.ReverseLL()
+	// c.ReverseLL()
+	c.MergeTwoLL()
 }
