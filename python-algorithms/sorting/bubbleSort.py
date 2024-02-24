@@ -6,5 +6,6 @@ def bubblesort(customList):
     return customList
 
 
-cList = [3,6,8,12,4,9,1,0,6]
+# cList = [3,6,8,12,4,9,1,0,6]
+cList = [5,2,3,1]
 print(bubblesort(cList))
