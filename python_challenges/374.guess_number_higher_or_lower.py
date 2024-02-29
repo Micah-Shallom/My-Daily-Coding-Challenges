@@ -26,7 +26,7 @@
 
 class Solution:
     def guess(self, num: int) -> int:
-        number = 9
+        number = 6
         if num > number:
             return -1
         elif num < number:
@@ -36,23 +36,21 @@ class Solution:
         
 
     def guessNumber(self, n: int) -> int:
-        l , r = 1, n
-
-        while l <= r:
-            mid = l + ( r - l ) // 2
-            result = self.guess(mid)
-
-            if result == 0:
+        low, high = 1, n
+        while low <= high:
+            mid = (low + high) // 2
+            G = self.guess(mid)
+            if G == 0:
+                print(low,high)
                 return mid
-                print(l,r)
-            elif result == 1:
-                l = mid + 1
-                print(l,r)
+            elif G == -1:
+                print(low,high)
+                high = mid - 1
             else:
-                r = mid - 1
-                print(l,r)
-        return -1
+                print(low,high)
+                low = mid + 1
+        return mid
 
 
 sol = Solution()
-print(sol.guessNumber(3))
+print(sol.guessNumber(7))

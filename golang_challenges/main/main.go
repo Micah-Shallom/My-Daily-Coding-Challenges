@@ -38,5 +38,6 @@ func main() {
 	// c.MergeAlternately()
 	// c.LengthOfLongestSubString()
 	// c.ReverseLL()
-	c.MergeTwoLL()
+	// c.MergeTwoLL()
+	c.GuessNumber()
 }
