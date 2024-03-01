@@ -39,5 +39,6 @@ func main() {
 	// c.LengthOfLongestSubString()
 	// c.ReverseLL()
 	// c.MergeTwoLL()
-	c.GuessNumber()
+	// c.GuessNumber()
+	c.MaximumOddBinaryNumber()
 }
