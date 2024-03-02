@@ -40,5 +40,6 @@ func main() {
 	// c.ReverseLL()
 	// c.MergeTwoLL()
 	// c.GuessNumber()
-	c.MaximumOddBinaryNumber()
+	// c.MaximumOddBinaryNumber()
+	c.SortedSquares()
 }
