@@ -41,5 +41,6 @@ func main() {
 	// c.MergeTwoLL()
 	// c.GuessNumber()
 	// c.MaximumOddBinaryNumber()
-	c.SortedSquares()
+	// c.SortedSquares()
+	c.RemoveNthFromEnd()
 }
