@@ -42,5 +42,6 @@ func main() {
 	// c.GuessNumber()
 	// c.MaximumOddBinaryNumber()
 	// c.SortedSquares()
-	c.RemoveNthFromEnd()
+	// c.RemoveNthFromEnd()
+	c.BagOfTokensScore()
 }

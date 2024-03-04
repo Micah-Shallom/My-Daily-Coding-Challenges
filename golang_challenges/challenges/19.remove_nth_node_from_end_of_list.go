@@ -51,7 +51,7 @@ func remNthSolution(head *Node1, n int) *Node1{
 
 	for i:=1; i < len(arr); i++ {
 		if i == pos{
-			prev.next = nil
+			// prev.next = nil
 			continue
 		}
 		prev.next = arr[i]
@@ -66,6 +66,6 @@ func remNthSolution(head *Node1, n int) *Node1{
 func RemoveNthFromEnd(){
 	arr := []int{1,2,3,4,5}
 	head := createLL1(arr)
-	head = remNthSolution(head, 2)
+	head = remNthSolution(head, 5)
 	printLL1(head)
 }
