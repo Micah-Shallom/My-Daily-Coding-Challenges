@@ -43,5 +43,6 @@ func main() {
 	// c.MaximumOddBinaryNumber()
 	// c.SortedSquares()
 	// c.RemoveNthFromEnd()
-	c.BagOfTokensScore()
+	// c.BagOfTokensScore()
+	c.MinimumLength()
 }
