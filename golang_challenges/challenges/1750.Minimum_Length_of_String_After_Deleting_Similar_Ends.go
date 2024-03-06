@@ -35,22 +35,15 @@ import "fmt"
 func minimumLsolution(s string) int {
 	l, r := 0, len(s)-1
 
-	for l < r {
-		lc := s[l]
-		rc := s[r]
+	for l < r && s[l] == s[r]{
 
-		if lc != rc {
-			return r - l + 1
-		}
-
-		for lc == s[l+1] && l+1 < r {
+		hold := s[l]
+		for l <= r && hold == s[l] {
 			l++
 		}
-		for rc == s[r-1] && r-1 > l {
+		for l <= r && hold == s[r] {
 			r--
 		}
-		l++
-		r--
 	}
 	return r - l + 1
 }
