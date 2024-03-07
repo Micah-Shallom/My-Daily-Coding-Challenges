@@ -44,5 +44,6 @@ func main() {
 	// c.SortedSquares()
 	// c.RemoveNthFromEnd()
 	// c.BagOfTokensScore()
-	c.MinimumLength()
+	// c.MinimumLength()
+	c.HasCycle()
 }
