@@ -41,6 +41,30 @@ func hcSolution(arr []int) (res bool){
 	return false
 }
 
+func thSolution(arr []int) (res bool){
+	head := createLL(arr)
+
+	if head == nil {
+		return false
+	}
+
+	tort := head
+	hare := head.next
+
+	for tort != nil && hare != nil {
+		if tort == hare {
+			return true
+		}
+		tort = tort.next
+		if hare.next == nil {
+			return false
+		}else{
+			hare = hare.next.next
+		}
+	}
+	return false
+}
+
 func HasCycle(){
 	head := []int{3,2,0,-4}
 	fmt.Println(hcSolution(head))
