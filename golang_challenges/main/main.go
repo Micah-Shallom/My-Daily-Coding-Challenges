@@ -45,5 +45,6 @@ func main() {
 	// c.RemoveNthFromEnd()
 	// c.BagOfTokensScore()
 	// c.MinimumLength()
-	c.HasCycle()
+	// c.HasCycle()
+	c.MaxFrequencyElements()
 }
