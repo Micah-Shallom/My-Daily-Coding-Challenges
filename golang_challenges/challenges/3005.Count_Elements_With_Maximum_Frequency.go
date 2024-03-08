@@ -21,7 +21,6 @@ package challenges
 
 import (
 	"fmt"
-
 )
 
 func mfeSolution(nums []int) (count int) {
