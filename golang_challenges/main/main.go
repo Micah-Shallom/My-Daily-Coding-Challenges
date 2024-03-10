@@ -48,5 +48,6 @@ func main() {
 	// c.HasCycle()
 	// c.MaxFrequencyElements()
 	// c.InOrderTraversal()
-	c.GetCommon()
+	// c.GetCommon()
+	c.Intersection()
 }
