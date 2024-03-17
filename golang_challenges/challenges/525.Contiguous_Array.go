@@ -38,12 +38,12 @@ func findmaxSolution(nums []int) int {
 		}
 
 	}
-	
+
 	return res
 }
 
 func FindMaxLength(){
 	// nums := []int{0,1,0}
-	nums := []int{1,1,1,0,0,0,0,0,1}
+	nums := []int{1,1,1,0,0,0,1}
 	fmt.Println(findmaxSolution(nums))
 }
