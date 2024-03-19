@@ -55,5 +55,7 @@ func main() {
 	// c.PivotInteger()
 	// c.NumSubarraysWithSum()
 	// c.FindMaxLength()
-	c.Insert()
+	// c.Insert()
+	// c.FindMinArrowShots()
+	c.LeastInterval()
 }
