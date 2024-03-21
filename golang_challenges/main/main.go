@@ -57,5 +57,6 @@ func main() {
 	// c.FindMaxLength()
 	// c.Insert()
 	// c.FindMinArrowShots()
-	c.LeastInterval()
+	// c.LeastInterval()
+	c.MergeInBetween()
 }
