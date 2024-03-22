@@ -16,12 +16,11 @@
 
 package challenges
 
-
-func mergeSolution(list1, list2 *Node, a , b int ) *Node{
+func mergeSolution(list1, list2 *Node, a, b int) *Node {
 	curr := list1
 	i := 0
 
-	for i < a - 1 {
+	for i < a-1 {
 		curr = curr.next
 		i++
 	}
@@ -31,9 +30,10 @@ func mergeSolution(list1, list2 *Node, a , b int ) *Node{
 		curr = curr.next
 		i++
 	}
-	head.next = list2
 
-	for list2.next != nil{
+	head.next = list2
+	
+	for list2.next != nil {
 		list2 = list2.next
 	}
 	list2.next = curr
@@ -41,9 +41,9 @@ func mergeSolution(list1, list2 *Node, a , b int ) *Node{
 	return list1
 }
 
-func MergeInBetween(){
-	list1 := createLL([]int{10,1,13,6,9,5})
-	list2 := createLL([]int{1000000,1000001,1000002})
+func MergeInBetween() {
+	list1 := createLL([]int{10, 1, 13, 6, 9, 5})
+	list2 := createLL([]int{1000000, 1000001, 1000002})
 	head := mergeSolution(list1, list2, 3, 4)
 	printLL(head)
 }
