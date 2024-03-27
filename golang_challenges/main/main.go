@@ -62,5 +62,6 @@ func main() {
 	// c.PalindromeLL()
 	// c.ReorderList()
 	// c.FindDuplicate()
-	c.FirstMissingPositive()
+	// c.FirstMissingPositive()
+	c.NumSubArrayProduct()
 }
