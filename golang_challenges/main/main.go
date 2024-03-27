@@ -60,5 +60,7 @@ func main() {
 	// c.LeastInterval()
 	// c.MergeInBetween()
 	// c.PalindromeLL()
-	c.ReorderList()
+	// c.ReorderList()
+	// c.FindDuplicate()
+	c.FirstMissingPositive()
 }

@@ -19,10 +19,10 @@
 package challenges
 
 
-func reorderSolution(head *Node) *Node{
-	// if head == nil || head.next == nil {
-	// 	return
-	// }
+func reorderSolution(head *Node){
+	if head == nil || head.next == nil {
+		return
+	}
 	
 	// find the middle of the linkedlist
 	middle := middleLLNode(head)
@@ -50,9 +50,8 @@ func reorderSolution(head *Node) *Node{
 		c2 = f2
 	}
 
-	return head
-
 }
+
 
 func middleLLNode(head *Node) *Node {
 	slow := head
@@ -82,6 +81,6 @@ func reverseLL(head *Node) *Node {
 func ReorderList(){
 	arr:= []int{1,2,3,4,5}
 	head := createLL(arr)
-	head = reorderSolution(head)
+	// head = reorderSolution(head)
 	printLL(head)
 }
