@@ -43,16 +43,15 @@ func maxSubarrayLength(nums []int, k int) int {
 			hashMap[nums[left]]--
 			left++
 		}
-
 		count = max(count, right-left+1)
-
 	}
+	
 	return count
 }
 
+
 func MaxSubLength() {
 	nums := []int{1,2,3,1,2,3,1,2}
-	// nums := []int{1,2,1,2,1,2,1,2}
 	k := 2
 	fmt.Println(maxSubarrayLength(nums, k))
 }
