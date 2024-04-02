@@ -65,5 +65,6 @@ func main() {
 	// c.FirstMissingPositive()
 	// c.NumSubArrayProduct()
 	// c.MaxSubLength()
-	c.LengthOfLastWord()
+	// c.LengthOfLastWord()
+	c.IsIsomorphic()
 }
