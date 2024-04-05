@@ -68,5 +68,6 @@ func main() {
 	// c.LengthOfLastWord()
 	// c.IsIsomorphic()
 	// c.WordSearch()
-	c.MaxDepth()
+	// c.MaxDepth()
+	c.MakeGreat()
 }
