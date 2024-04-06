@@ -73,5 +73,6 @@ func main() {
 	// c.MakeGreat()
 	// c.CheckValidParenthesis()
 	// d.MSStack()
-	d.SimpleSortingAlgorithms()
+	// d.SimpleSortingAlgorithms()
+	d.Heap()
 }
