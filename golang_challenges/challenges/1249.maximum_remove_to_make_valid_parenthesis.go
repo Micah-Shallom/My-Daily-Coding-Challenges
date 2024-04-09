@@ -1,3 +1,5 @@
+package challenges
+
 func minRemoveToMakeValid(s string) string {
     stack := []int{} //this will track the index of non-valid parenthesis
     hashMap := map[int]rune{} //this will contain each char of the string s with its index as key so we can use the values in stack to know what parenthesis to remove

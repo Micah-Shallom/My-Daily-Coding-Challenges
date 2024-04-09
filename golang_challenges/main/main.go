@@ -69,5 +69,6 @@ func main() {
 	// c.IsIsomorphic()
 	// c.WordSearch()
 	// c.MaxDepth()
-	c.MakeGreat()
+	// c.MakeGreat()
+	c.CheckValidParenthesis()
 }
