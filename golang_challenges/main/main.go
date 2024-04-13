@@ -1,6 +1,7 @@
 package main
 
-import c "github.com/Micah-Shallom/modules/challenges"
+// import c "github.com/Micah-Shallom/modules/challenges"
+import d "github.com/Micah-Shallom/modules/algorithms"
 
 func main() {
 	// c.Twosums()
@@ -70,5 +71,6 @@ func main() {
 	// c.WordSearch()
 	// c.MaxDepth()
 	// c.MakeGreat()
-	c.CheckValidParenthesis()
+	// c.CheckValidParenthesis()
+	d.MSStack()
 }
