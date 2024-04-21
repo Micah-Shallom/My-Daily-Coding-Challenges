@@ -72,5 +72,6 @@ func main() {
 	// c.MaxDepth()
 	// c.MakeGreat()
 	// c.CheckValidParenthesis()
-	d.MSStack()
+	// d.MSStack()
+	d.SimpleSortingAlgorithms()
 }
