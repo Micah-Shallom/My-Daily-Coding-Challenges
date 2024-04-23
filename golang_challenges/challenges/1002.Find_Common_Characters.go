@@ -36,7 +36,7 @@ func commonChar(words []string) []string{
 			tempHM[char]++
 		}
 
-		//loop through the first and compare with temp, if there is a situation whereby a string in reference isnt in tempHM lets take it down to zero else lets populate the value for that string to the minimum value between tempHM and refHM.
+		//loop through the first and compare with temp, if there is a situation whereby a string in reference isn't in tempHM lets take it down to zero else lets populate the value for that string to the minimum value between tempHM and refHM.
 
 		for k, v := range refHM {
 			if _, exists := tempHM[k]; !exists{
