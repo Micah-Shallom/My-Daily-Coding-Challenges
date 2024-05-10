@@ -14,6 +14,16 @@ package challenges
 import "math"
 
 func judgeSquareSum(c int) bool {
+	//horrible brute force solution would be
+
+	// for i := 0; i <= c; i++ {
+	//     for j := 0; j <= c ; j++ {
+	//         if i*i + j*j == c{
+	//             return true
+	//         }
+	//     }
+	// }
+	// return false
 	if c < 0 {
 		return false;
 	};
