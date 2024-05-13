@@ -28,3 +28,24 @@ import (
 	"strconv"
 )
 
+func findRelativeRanks(score []int) []string {
+	m := make(map[int]int)
+	for i, v := range score {
+		m[v] = i
+	}
+	sort.Sort(sort.Reverse(sort.IntSlice(score)))
+	res := make([]string, len(score))
+	for i, v := range score {
+		switch i {
+		case 0:
+			res[m[v]] = "Gold Medal"
+		case 1:
+			res[m[v]] = "Silver Medal"
+		case 2:
+			res[m[v]] = "Bronze Medal"
+		default:
+			res[m[v]] = strconv.Itoa(i + 1)
+		}
+	}
+	return res
+}
