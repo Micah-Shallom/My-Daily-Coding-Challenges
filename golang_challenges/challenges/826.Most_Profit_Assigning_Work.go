@@ -19,7 +19,7 @@
 // Input: difficulty = [85,47,57], profit = [24,66,99], worker = [40,25,25]
 // Output: 0
 
-
+package challenges
 
 
 type mapping struct {
