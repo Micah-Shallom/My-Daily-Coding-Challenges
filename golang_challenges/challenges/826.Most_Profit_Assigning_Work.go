@@ -49,7 +49,6 @@ func maxProfitAssignment(difficulty []int, profit []int, worker []int) (res int 
             maxwork = max(maxwork, pdMap[j].prof)
             j++
         }
-
         res += maxwork
     }
 
