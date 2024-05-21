@@ -23,7 +23,8 @@ func judgeSquareSum(c int) bool {
 	//         }
 	//     }
 	// }
-	// return false
+	// return false;
+	
 	if c < 0 {
 		return false;
 	};
