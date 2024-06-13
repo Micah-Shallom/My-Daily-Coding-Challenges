@@ -31,13 +31,7 @@
 // After day 12: [x, x, x, x, x, x, x]
 // It is obvious that we can make two bouquets in different ways.
 
-// Constraints:
 
-// bloomDay.length == n
-// 1 <= n <= 105
-// 1 <= bloomDay[i] <= 109
-// 1 <= m <= 106
-// 1 <= k <= n
 
 package challenges
 
