@@ -14,3 +14,7 @@
 ## BackTracking and Dynamic Programming
 -   https://hackernoon.com/backtracking-leetcode-pattern-permutations-vs-subsets-in-java 
 -   https://leetcode.com/explore/learn/card/recursion-ii/472/backtracking/2654/
+  
+
+## Binary Search
+-   https://leetcode.com/discuss/general-discussion/786126/Python-Powerful-Ultimate-Binary-Search-Template.-Solved-many-problems
