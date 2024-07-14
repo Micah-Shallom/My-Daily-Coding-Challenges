@@ -44,6 +44,7 @@ class SLinkedList:
                     index += 1
                 new_node.next = node.next
                 node.next = new_node
+
     def traverseSLL(self,location):
         if self.head is None:
             return "The Linked List does not exist"
