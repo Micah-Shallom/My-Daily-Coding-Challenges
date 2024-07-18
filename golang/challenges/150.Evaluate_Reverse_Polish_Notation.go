@@ -10,7 +10,6 @@
 // There will not be any division by zero.
 // The input represents a valid arithmetic expression in a reverse polish notation.
 // The answer and all the intermediate calculations can be represented in a 32-bit integer.
- 
 
 // Example 1:
 
@@ -36,36 +35,38 @@
 
 package challenges
 
+import "strconv"
+
 func evalRPN(tokens []string) int {
 	stack := []int{}
 
-    for _, v := range tokens {
-        //try to convert into an int, if it fails then it is an operator
-        intVal, err := strconv.Atoi(v)
-        if err != nil {
-            //pop the last 2 elements from the stack
-            x,y := stack[len(stack)-1], stack[len(stack)-2]
-            stack = stack[:len(stack)-2]
-            val := operation(v, x, y)
-            stack = append(stack, val)
-        }else {
-            stack = append(stack, intVal)
-        }
-    }
-    return stack[0]
+	for _, v := range tokens {
+		//try to convert into an int, if it fails then it is an operator
+		intVal, err := strconv.Atoi(v)
+		if err != nil {
+			//pop the last 2 elements from the stack
+			x, y := stack[len(stack)-1], stack[len(stack)-2]
+			stack = stack[:len(stack)-2]
+			val := operation(v, x, y)
+			stack = append(stack, val)
+		} else {
+			stack = append(stack, intVal)
+		}
+	}
+	return stack[0]
 }
 
 func operation(sign string, x, y int) int {
-    val := 0
-    switch sign {
-    case "+":
-        val = y + x
-    case "-":
-        val = y - x
-    case "*":
-        val = y * x
-    case "/":
-        val = y / x
-    }
-    return val
+	val := 0
+	switch sign {
+	case "+":
+		val = y + x
+	case "-":
+		val = y - x
+	case "*":
+		val = y * x
+	case "/":
+		val = y / x
+	}
+	return val
 }

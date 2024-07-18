@@ -6,8 +6,6 @@
 
 // Return the maximum sum of the happiness values of the selected children you can achieve by selecting k children.
 
- 
-
 // Example 1:
 
 // Input: happiness = [1,2,3], k = 2
@@ -32,8 +30,9 @@
 // - Pick the child with the happiness value == 5. The happiness value of the remaining children becomes [1,2,3].
 // The sum of the happiness values of the selected children is 5.
 
-
 package challenges
+
+import "sort"
 
 func maxSumOfHappiness(happiness []int, k int) int {
 	n := len(happiness)
@@ -49,19 +48,17 @@ func maxSumOfHappiness(happiness []int, k int) int {
 	return dp[n][k]
 }
 
-
 func maximumHappinessSum(happiness []int, k int) int64 {
-    sort.Slice(happiness, func(i, j int) bool {
-        return happiness[i] > happiness[j]
-    })
-    max_happiness := 0
+	sort.Slice(happiness, func(i, j int) bool {
+		return happiness[i] > happiness[j]
+	})
+	max_happiness := 0
 
-    for i, v := range happiness{
-        decreased_happiness := v - i
-        if decreased_happiness > 0 {
-            max_happiness += decreased_happiness
-        }
-    }
-    return max_happiness
+	for i, v := range happiness {
+		decreased_happiness := v - i
+		if decreased_happiness > 0 {
+			max_happiness += decreased_happiness
+		}
+	}
+	return int64(max_happiness)
 }
-

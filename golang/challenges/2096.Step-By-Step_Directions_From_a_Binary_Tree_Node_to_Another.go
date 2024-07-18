@@ -7,23 +7,20 @@
 // 'U' means to go from a node to its parent node.
 // Return the step-by-step directions of the shortest path from node s to node t.
 
- 
-
 // Example 1:
-
 
 // Input: root = [5,1,2,3,null,6,4], startValue = 3, destValue = 6
 // Output: "UURL"
 // Explanation: The shortest path is: 3 → 1 → 5 → 2 → 6.
 // Example 2:
 
-
 // Input: root = [2,1], startValue = 2, destValue = 1
 // Output: "L"
 // Explanation: The shortest path is: 2 → 1.
 
-
 package challenges
+
+import "strings"
 
 func getDirections(root *TreeNode, startValue int, destValue int) string {
 	var path []string

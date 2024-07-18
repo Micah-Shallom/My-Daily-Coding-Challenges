@@ -2,10 +2,7 @@
 
 // A leaf is a node with no children. A left leaf is a leaf that is the left child of another node.
 
- 
-
 // Example 1:
-
 
 // Input: root = [3,9,20,null,null,15,7]
 // Output: 24
@@ -24,21 +21,23 @@
  * }
  */
 
- func dfs(root *TreeNode, isLeft bool) int {
-    if root == nil {
-        return 0
-    }
+ package challenges
 
-    if isLeft == true && root.Left == nil && root.Right == nil {
-        return root.Val
-    }
+func dfs(root *TreeNode, isLeft bool) int {
+	if root == nil {
+		return 0
+	}
 
-    countLeft := dfs(root.Left, true)
-    countRight := dfs(root.Right, false)
+	if isLeft == true && root.Left == nil && root.Right == nil {
+		return root.Val
+	}
 
-    return countLeft + countRight
+	countLeft := dfs(root.Left, true)
+	countRight := dfs(root.Right, false)
+
+	return countLeft + countRight
 }
 
 func sumOfLeftLeaves(root *TreeNode) int {
-    return dfs(root, false)
+	return dfs(root, false)
 }

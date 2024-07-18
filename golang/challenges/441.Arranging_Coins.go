@@ -8,15 +8,16 @@ func arrangeCoins(n int) int {
 	//sovle usng binary search
 	left, right := 0, n
 	for left <= right {
-		mid := left + (right - left) / 2
+		mid := left + (right-left)/2
 		curr := mid * (mid + 1) / 2
 		if curr == n {
 			return mid
 		}
 		if n < curr {
 			right = mid - 1
-		}else {
+		} else {
 			left = mid + 1
 		}
 	}
-};
+	return right
+}

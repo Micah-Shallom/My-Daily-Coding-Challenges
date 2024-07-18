@@ -6,8 +6,6 @@
 
 // Return an array of the k parts.
 
- 
-
 // Example 1:
 
 // Input: head = [1,2,3], k = 5
@@ -23,9 +21,7 @@
 // Explanation:
 // The input has been split into consecutive parts with size difference at most 1, and earlier parts are a larger size than the later parts.
 
-
 package challenges
-
 
 /**
  * Definition for singly-linked list.
@@ -35,55 +31,60 @@ package challenges
  * }
  */
 
- func llSize(head *ListNode) (res int) {
-    p := head 
-    for p != nil {
-        res++
-        p = p.Next
-    }
-    return
+type ListNode struct {
+    Val  int
+    Next *ListNode
+}
+
+func llSize(head *ListNode) (res int) {
+	p := head
+	for p != nil {
+		res++
+		p = p.Next
+	}
+	return
 }
 
 func splitListToParts(head *ListNode, k int) []*ListNode {
-    llst := []*ListNode{}
-    size := llSize(head)
+	llst := []*ListNode{}
+	size := llSize(head)
 
-    // Determine the base size and the remainder
-    div := size / k
-    rem := size % k
+	// Determine the base size and the remainder
+	div := size / k
+	rem := size % k
 
-    curr := head
+	curr := head
 
-    for cnt := 0; cnt < k; cnt++ {
-        var new_head, prev *ListNode
-        part_size := div
-        
-        if rem > 0 {
-            part_size++
-            rem--
-        }
+	for cnt := 0; cnt < k; cnt++ {
+		var new_head, prev *ListNode
+		part_size := div
 
-        for i := 0; i < part_size; i++ {
-            if curr == nil {
-                break
-            }
+		if rem > 0 {
+			part_size++
+			rem--
+		}
 
-            // Create a new node for this part
-            new_node := &ListNode{Val: curr.Val}
-            
-            if new_head == nil {
-                new_head = new_node // Set the head for the new part
-            } else {
-                prev.Next = new_node // Link the new node to the previous one
-            }
-            
-            prev = new_node // Move the prev pointer
+		for i := 0; i < part_size; i++ {
+			if curr == nil {
+				break
+			}
 
-            curr = curr.Next // Move the curr pointer in the original list
-        }
+			// Create a new node for this part
+			new_node := &ListNode{Val: curr.Val}
 
-        llst = append(llst, new_head) // Append the new part to the result list
-    }
+			if new_head == nil {
+				new_head = new_node // Set the head for the new part
+			} else {
+				prev.Next = new_node // Link the new node to the previous one
+			}
 
-    return llst
+			prev = new_node // Move the prev pointer
+
+			curr = curr.Next // Move the curr pointer in the original list
+		}
+
+		llst = append(llst, new_head) // Append the new part to the result list
+	}
+
+	return llst
 }

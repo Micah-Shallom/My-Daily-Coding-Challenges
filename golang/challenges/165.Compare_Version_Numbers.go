@@ -37,7 +37,6 @@
 
 package challenges
 
-give me hints on how to solve this.
 
 
 

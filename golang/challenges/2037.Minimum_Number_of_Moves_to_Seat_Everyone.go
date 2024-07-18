@@ -7,8 +7,6 @@
 
 // Note that there may be multiple seats or students in the same position at the beginning.
 
- 
-
 // Example 1:
 
 // Input: seats = [3,1,5], students = [2,7,4]
@@ -42,15 +40,18 @@
 
 package challenges
 
-import "sort"
+import (
+	"math"
+	"sort"
+)
 
 func minMovesToSeat(seats []int, students []int) int {
-    sort.Ints(seats)
-    sort.Ints(students)
-    count := 0
+	sort.Ints(seats)
+	sort.Ints(students)
+	count := 0
 
-    for i := 0; i < len(seats); i++ {
-        count += int(math.Abs(float64(seats[i]- students[i])))
-    }
-    return count
+	for i := 0; i < len(seats); i++ {
+		count += int(math.Abs(float64(seats[i] - students[i])))
+	}
+	return count
 }
